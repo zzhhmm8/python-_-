@@ -1,0 +1,35 @@
+import numpy as np
+a1 = -0.9
+a2 = 0.5
+a3 = 0.7
+input1 = np.array([a1, a2, a3])
+input1 = np.array([[a1, a2, a3],
+                   [a1, a2, a3]])
+
+w11 = 0.8
+w21 = -0.4
+w31 = 0
+
+w12 = 0.5
+w22 = -0.2
+w32 = 0
+
+weights = np.array([[w11, w12],
+                  [w21, w22],
+                  [w31, w32]])
+
+# weights = np.array([w1,
+#                     w2,
+#                     w3])
+
+b1 = 0.6
+
+# sum1 = a1*w1 + a2*w2 + a3*w3 + b1
+sum1 = np.dot(input1, weights) + b1
+# 激活函数
+def activation_relu(input):
+    return np.maximum(0, input)
+
+sum2 = activation_relu(sum1)
+print(sum1)
+print(sum2)
